@@ -54,6 +54,11 @@
       <button id="carregar" type="button">Enviar</button>
     </form>
 
+    <div class="itinerario_div" id="itinerario_div">
+      <!-- CARDS -->
+    </div>
+
+
     <footer class="rodape">
       <div class="redes-sociais">
         <a href="https://youtu.be/od_PmtmMDV0?si=Ku77W07P5Ocg4a_E"> <img src="img/instagram.png" alt=""></a>

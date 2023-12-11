@@ -158,7 +158,8 @@
   height: 500px;
 }
 
-.home_div {
+.home_div,
+.itinerario_div {
   display: flex;
   flex-wrap: wrap;
 }

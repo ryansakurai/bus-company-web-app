@@ -43,7 +43,7 @@
     </div>
 
     <div class="home_div" id="home_home">
-
+      <!-- CARDS -->
     </div>
 
     <div class="titulo">

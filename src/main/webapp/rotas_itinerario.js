@@ -3,13 +3,13 @@ const exibirPorRegiao = function (regiao) {
         'http://localhost:8080/mp1/recuperarPorRegiao',
         { regiao: regiao },
         function (data) {
-            console.log(data);
+            exibirItinerariosRegiao(data);
         }
     );
 }
 
 $(document).ready(
-    function() {
+    function () {
         $('#carregar').click(
             function () {
                 const regiao = $('#regiao').val();
@@ -18,4 +18,21 @@ $(document).ready(
         );
     }
 );
- 
+
+function exibirItinerariosRegiao(textoItinerarios) {
+    var div = $("#itinerario_div");
+    div.empty();
+
+    $.each(textoItinerarios, function (index, linha) {
+        var itinerario = linha['itinerario'];
+        var card = $('<div class="home_linhas">');
+        card.append('<h1 class="home_titulo">' + linha['id'] + ' - ' + linha['descricao'] + '</h1>');
+        card.append('<p class="home_subtitulo">Ponto de Saída:</p>');
+        card.append('<p class="home_info">' + linha['terminal'] + '</p>');
+        card.append('<p class="home_subtitulo">Ponto Final:</p>');
+        card.append('<p class="home_info">' + itinerario[itinerario.length - 1].endereco + '</p>');
+        div.append(card);
+
+    }
+    );
+}
