@@ -4,10 +4,14 @@ import java.util.List;
 
 public class Itinerario {
 
-    private final int id;
-    private final String descricao;
-    private final String terminal;
-    private final List<PontoDeParada> pontosDeParada;
+    private int id;
+    private String descricao;
+    private String terminal;
+    private List<PontoDeParada> pontosDeParada;
+
+    public Itinerario() {
+
+    }
 
     public Itinerario(int id, String descricao, String terminal, List<PontoDeParada> pontosDeParada) {
         this.id = id;

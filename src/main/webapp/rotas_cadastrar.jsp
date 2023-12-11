@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>OinsBus</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -31,23 +33,11 @@
 
     </div>
   </header>
-
   <div class="titulo">
     <h1 class="titulo_linha"></h1>
     <h1 class="titulo_nome">Cadastrar itinerários</h1>
     <h1 class="titulo_linha"></h1>
   </div>
-
-  <div class="cadastro"></div>
-  <div class="titulo">
-    <h1 class="titulo_linha"></h1>
-    <h1 class="titulo_nome">Entre em contato conosco</h1>
-    <h1 class="titulo_linha"></h1>
-  </div>
-
-
-
-
   <form id="itinerarioForm">
     <label for="id">ID:</label>
     <input type="text" id="id" name="id" required><br>
@@ -63,51 +53,6 @@
 
     <button type="button" onclick="enviarFormulario()">Enviar</button>
   </form>
-
-  <script>
-    function enviarFormulario() {
-      // Coletar dados do formulário
-      var formData = {
-        "id": parseInt($("#id").val(), 10),
-        "descricao": $("#descricao").val(),
-        "terminal": $("#terminal").val(),
-        "pontosParada": parsePontosParada($("#pontosParada").val())
-      };
-
-      // Enviar dados via AJAX
-      $.ajax({
-        type: "POST",
-        url: "CaminhoDoSeuServlet",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(formData),
-        success: function (data) {
-          alert("Dados enviados com sucesso!");
-        },
-        error: function (error) {
-          console.error("Erro ao enviar dados:", error);
-        }
-      });
-    }
-
-    function parsePontosParada(pontosParadaString) {
-      // Função para converter a string de pontos de parada em um array de objetos
-      var pontosParadaArray = [];
-      var pontosParadaPairs = pontosParadaString.split(';');
-
-      for (var i = 0; i < pontosParadaPairs.length; i++) {
-        var pair = pontosParadaPairs[i].split(',');
-        if (pair.length === 2) {
-          pontosParadaArray.push({ "id": parseInt(pair[0], 10), "nome": pair[1] });
-        }
-      }
-
-      return pontosParadaArray;
-    }
-  </script>
-
-
-
   <footer class="rodape">
     <div class="redes-sociais">
       <a href="#instagram"> <img src="img/instagram.png" alt=""></a>
