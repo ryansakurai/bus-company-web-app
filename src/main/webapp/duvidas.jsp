@@ -57,7 +57,7 @@
 
   <div class="botao_top">
     <p class="texto_center">Não encontrou sua dúvida por aqui? Entre em contato conosco</p>
-    <a href="contato.html" class="botao">Contato</a>
+    <a href="contato.jsp" class="botao">Contato</a>
   </div>
 
   <footer class="rodape">
