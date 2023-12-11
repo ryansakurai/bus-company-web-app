@@ -1,5 +1,5 @@
 package entidades;
 
-public record PontoDeParada(String id, String regiao) {
+public record PontoDeParada(String endereco, String regiao) {
 
 }

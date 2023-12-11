@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import entidades.Itinerario;
+import entidades.Linha;
 
-@WebServlet("/cadastroDeItinerario")
-public class CadastroDeItinerario extends HttpServlet {
+@WebServlet("/cadastrar")
+public class Cadastrar extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
@@ -26,17 +27,18 @@ public class CadastroDeItinerario extends HttpServlet {
 		super.init();
 		this.context = getServletContext();
 
-		if(context.getAttribute("itinerarios") == null)
-			this.context.setAttribute("itinerarios", new ArrayList<Itinerario>());
+		if(context.getAttribute("linhas") == null)
+			this.context.setAttribute("linhas", new ArrayList<Linha>());
 	}
 
-	private static class Comparador implements Comparator<Itinerario> {
+	private static class Comparador implements Comparator<Linha> {
 		@Override
-		public int compare(Itinerario o1, Itinerario o2) {
+		public int compare(Linha o1, Linha o2) {
 			return o1.getId() - o2.getId();
 		}
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StringBuffer buffer = new StringBuffer();
 		try {
@@ -50,13 +52,13 @@ public class CadastroDeItinerario extends HttpServlet {
 		}
 
 		Gson gson = new Gson();
-		Itinerario novo = gson.fromJson(buffer.toString(), Itinerario.class);
+		Linha novo = gson.fromJson(buffer.toString(), Linha.class);
 		System.out.printf("Novo: %s", novo);
 
-		ArrayList<Itinerario> itinerarios = (ArrayList<Itinerario>) context.getAttribute("itinerarios");
-		itinerarios.add(novo);
-		Collections.sort(itinerarios, new Comparador());
-		context.setAttribute("itinerarios", itinerarios);
+		List<Linha> linhas = (List<Linha>) context.getAttribute("linhas");
+		linhas.add(novo);
+		Collections.sort(linhas, new Comparador());
+		context.setAttribute("linhas", linhas);
 	}
 
 }
