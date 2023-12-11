@@ -1,89 +1,91 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<%@page contentType="text/html; charset=UTF-8" %>
 
-<head>
-  <meta charset="UTF-8">
-  <title>OinsBus</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
 
-<body>
-  <header>
-    <div class="navbar">
-      <div class="icone-direita">
-        <a href="#icone"><img src="img/logo.png" alt="Ícone"></a>
+  <head>
+    <meta charset="UTF-8">
+    <title>OinsBus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="icone-direita">
+          <a href="#icone"><img src="img/logo.png" alt="Ícone"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.jsp">HOME</a></li>
+          <li class="dropdown"><a href="rotas_itinerario.jsp">ROTAS</a>
+            <div class="dropdown-content">
+              <a href="rotas_itinerario.jsp">Itinerários</a>
+              <a href=" ">Cadastrar Itinerários</a>
+            </div>
+          </li>
+          <li><a href="contato.jsp">CONTATO</a></li>
+          <li><a href="empresa.jsp">EMPRESA</a></li>
+          <li><a href="rotas_cadastrar.jsp" class="active">DÚVIDAS</a></li>
+        </ul>
+
       </div>
-      <ul class="menu">
-        <li><a href="index.jsp">HOME</a></li>
-        <li class="dropdown"><a href="rotas_itinerario.jsp">ROTAS</a>
-          <div class="dropdown-content">
-            <a href="rotas_itinerario.jsp">Itinerários</a>
-            <a href=" ">Cadastrar Itinerários</a>
-          </div>
-        </li>
-        <li><a href="contato.jsp">CONTATO</a></li>
-        <li><a href="empresa.jsp">EMPRESA</a></li>
-        <li><a href="rotas_cadastrar.jsp" class="active">DÚVIDAS</a></li>
-      </ul>
+    </header>
 
+    <div class="titulo">
+      <h1 class="titulo_linha"></h1>
+      <h1 class="titulo_nome">Duvidas?</h1>
+      <h1 class="titulo_linha"></h1>
     </div>
-  </header>
 
-  <div class="titulo">
-    <h1 class="titulo_linha"></h1>
-    <h1 class="titulo_nome">Duvidas?</h1>
-    <h1 class="titulo_linha"></h1>
-  </div>
-
-  <div class="duvidas_caixa">
-    <p class="duvidas_perguntas">Como posso saber o itinerário do meu ônibus?</p>
-    <p class="duvidas_respostas">Para consultar um itinerário basta acessar o página de Rotas.</p>
-  </div>
-
-  <div class="duvidas_caixa">
-    <p class="duvidas_perguntas">Qual o horario de funcionamento das linhas?</p>
-    <p class="duvidas_respostas">Todas as Linhas funcionam das 4:00 AM até 23:30 PM, exceto aos domingos e feriados onde os ônibus funcionam em horários reduzidos das 6:00 AM até 18:00 PM</p>
-  </div>
-
-  <div class="duvidas_caixa">
-    <p class="duvidas_perguntas">Como obter o benefício para estudantes?</p>
-    <p class="duvidas_respostas">Para obter o benefício para estudantes é necessário se apresentar o comprovante de matrícula, comprovante de endereço e um documento com foto (RG ou CPF) em uma central de atendimento da Oinsbus de segunda a sexta entre 14:00 PM às 18:00 PM</p>
-  </div>
-
-  <div class="botao_top">
-    <p class="texto_center">Não encontrou sua dúvida por aqui? Entre em contato conosco</p>
-    <a href="contato.jsp" class="botao">Contato</a>
-  </div>
-
-  <footer class="rodape">
-    <div class="redes-sociais">
-      <a href="#instagram"> <img src="img/instagram.png" alt=""></a>
-      <a href="#whatsapp"><img src="img/whatsapp.png" alt=""></a>
+    <div class="duvidas_caixa">
+      <p class="duvidas_perguntas">Como posso saber o itinerário do meu ônibus?</p>
+      <p class="duvidas_respostas">Para consultar um itinerário basta acessar o página de Rotas.</p>
     </div>
-    <div class="links-uteis">
-      <a href="#duvidas">
-        <p>Dúvidas</p>
-      </a>
-      <a href="#contato">
-        <p>Contato</p>
-      </a>
-      <a href="#empresa">
-        <p>Empresa</p>
-      </a>
+
+    <div class="duvidas_caixa">
+      <p class="duvidas_perguntas">Qual o horario de funcionamento das linhas?</p>
+      <p class="duvidas_respostas">Todas as Linhas funcionam das 4:00 AM até 23:30 PM, exceto aos domingos e feriados onde os ônibus funcionam em horários reduzidos das 6:00 AM até 18:00 PM</p>
     </div>
-    <div class="logo-direita">
-      <a href="#home"><img src="img/logo.png" alt="Logo"></a>
+
+    <div class="duvidas_caixa">
+      <p class="duvidas_perguntas">Como obter o benefício para estudantes?</p>
+      <p class="duvidas_respostas">Para obter o benefício para estudantes é necessário se apresentar o comprovante de matrícula, comprovante de endereço e um documento com foto (RG ou CPF) em uma central de atendimento da Oinsbus de segunda a sexta entre 14:00 PM às 18:00 PM</p>
     </div>
-  </footer>
 
-</body>
+    <div class="botao_top">
+      <p class="texto_center">Não encontrou sua dúvida por aqui? Entre em contato conosco</p>
+      <a href="contato.jsp" class="botao">Contato</a>
+    </div>
 
-</html>
-</body>
+    <footer class="rodape">
+      <div class="redes-sociais">
+        <a href="#instagram"> <img src="img/instagram.png" alt=""></a>
+        <a href="#whatsapp"><img src="img/whatsapp.png" alt=""></a>
+      </div>
+      <div class="links-uteis">
+        <a href="#duvidas">
+          <p>Dúvidas</p>
+        </a>
+        <a href="#contato">
+          <p>Contato</p>
+        </a>
+        <a href="#empresa">
+          <p>Empresa</p>
+        </a>
+      </div>
+      <div class="logo-direita">
+        <a href="#home"><img src="img/logo.png" alt="Logo"></a>
+      </div>
+    </footer>
 
-</html>
+  </body>
+
+  </html>
+  </body>
+
+  </html>

@@ -24,7 +24,8 @@
 
 /* Itens do menu */
 .menu li {
-  margin-right: 10px; /* Espaçamento entre os itens */
+  margin-right: 10px;
+  /* Espaçamento entre os itens */
 }
 
 /* Links dos itens */
@@ -37,12 +38,12 @@
   font-size: 25px;
 }
 
-.active{
+.active {
   background-color: #B65700;
   border-radius: 10px;
 }
 
-.titulo{
+.titulo {
   display: block;
   margin: 50px 20px 20px 20px;
 }
@@ -56,23 +57,23 @@
   width: 39%;
 }
 
-.titulo_linha{
+.titulo_linha {
   display: inline-block;
   width: 30%;
   height: 2px;
-  background-color: black;  
+  background-color: black;
   margin: auto;
   margin-bottom: 10px;
 }
 
-.texto{
+.texto {
   color: black;
   font-size: 25px;
   text-align: justify;
   padding: 50px;
 }
 
-.duvidas_caixa{
+.duvidas_caixa {
   display: block;
   border: 5px solid #FF7A00;
   height: 300px;
@@ -80,7 +81,7 @@
   border-radius: 15px;
 }
 
-.duvidas_perguntas{
+.duvidas_perguntas {
   padding-left: 20px;
   color: white;
   background-color: #FF7A00;
@@ -90,20 +91,20 @@
   line-height: 117px;
 }
 
-.duvidas_respostas{
+.duvidas_respostas {
   padding: 10px;
   color: black;
   font-size: 25px;
 }
 
-.texto_center{
+.texto_center {
   color: black;
   font-size: 25px;
   text-align: center;
   padding: 50px;
 }
 
-.botao{
+.botao {
   background-color: #FF7A00;
   color: white;
   font-size: 25px;
@@ -117,20 +118,21 @@
   border: none;
 }
 
-.botao_top{
+.botao_top {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.contato{
+.contato {
   margin: 20px 50px;
 }
 
-.botao_right{
+.botao_right {
   text-align: right;
   margin-bottom: 50px;
 }
-.input{
+
+.input {
   width: 100%;
   background-color: #D9D9D9;
   border: none;
@@ -139,55 +141,55 @@
   border-radius: 10px;
 }
 
-.input_texto{
+.input_texto {
   font-size: 20px;
   color: black;
   font-weight: bold;
 }
 
-.mensagem{
+.mensagem {
   height: 160px;
   max-width: 100%;
   overflow-x: auto;
   word-wrap: break-word;
 }
 
-.cadastro{
+.cadastro {
   height: 500px;
 }
 
-.home_div{
+.home_div {
   display: flex;
   flex-wrap: wrap;
 }
 
-.home_linhas{
+.home_linhas {
   width: 30%;
   background-color: #D9D9D9;
   border-radius: 10px;
   margin: 40px auto;
 }
 
-.home_titulo{
+.home_titulo {
   color: black;
   font-size: 30px;
   text-align: center;
   padding-top: 10px;
 }
 
-.home_subtitulo{
+.home_subtitulo {
   color: #666364;
   font-size: 15px;
   padding: 0px 10px;
 }
 
-.home_info{
+.home_info {
   color: black;
   padding: 0px 10px;
   font-size: 20px;
 }
 
-.home_ver{
+.home_ver {
   text-align: right;
   color: #666364;
   font-size: 15px;
@@ -202,7 +204,8 @@
 
 /* Ícone à direita */
 .icone-direita img {
-  height: 182px; /* Altura do ícone */
+  height: 182px;
+  /* Altura do ícone */
 }
 
 /* Dropdown */
@@ -223,7 +226,9 @@
 
 
 /* Mostre o dropdown quando o mouse estiver sobre o botão dropdown */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .rodape {
   font-weight: bold;
@@ -244,7 +249,7 @@
   text-decoration: none;
 }
 
-.redes-sociais img{
+.redes-sociais img {
   width: 50px;
   height: 50px;
 }
@@ -265,18 +270,20 @@
 
 /* Estilize a logo à direita */
 .logo-direita img {
-  height: 182px; /* Altura da logo */
+  height: 182px;
+  /* Altura da logo */
 }
 
 form {
-  max-width: 300px;
+  max-width: 100%;
   margin: 20px auto;
   padding: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   color: #333;
   font-size: 14px;
 }
