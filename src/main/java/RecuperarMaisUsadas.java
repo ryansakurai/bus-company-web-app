@@ -41,12 +41,13 @@ public class RecuperarMaisUsadas extends HttpServlet {
 	
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        final int QT_LINHAS = Integer.parseInt(request.getParameter("quantidade"));
+        final int QT_LINHAS_PARAM = Integer.parseInt(request.getParameter("quantidade"));
 
 		List<Linha> linhas = (ArrayList<Linha>) context.getAttribute("linhas");
         List<Linha> linhasOrdenadas = new ArrayList<>(linhas);
         Collections.sort(linhasOrdenadas, new Comparador());
-        List<Linha> primeirosOito = linhasOrdenadas.subList(0, QT_LINHAS);
+		int qt_linhas_output = QT_LINHAS_PARAM <= linhasOrdenadas.size() ? QT_LINHAS_PARAM : linhasOrdenadas.size();
+        List<Linha> primeirosOito = linhasOrdenadas.subList(0, qt_linhas_output);
 
 		Gson gson = new Gson();
 		String linhasJson = gson.toJson(primeirosOito);
