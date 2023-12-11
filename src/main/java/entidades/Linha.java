@@ -48,4 +48,11 @@ public class Linha {
                 terminal, itinerario);
     }
 
+    public boolean passaPelaRegiao(String regiao) {
+        for(PontoDeParada ponto : this.getItinerario())
+            if(ponto.regiao().toUpperCase().compareTo(regiao.toUpperCase()) == 0)
+                return true;
+        return false;
+    }
+
 }
