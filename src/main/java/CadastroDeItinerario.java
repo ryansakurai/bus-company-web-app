@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 import entidades.Itinerario;
 
@@ -49,12 +49,11 @@ public class CadastroDeItinerario extends HttpServlet {
 			System.out.println(e.getMessage());
 		}
 
-		ObjectMapper mapper = new ObjectMapper();
-		Itinerario novo = mapper.readValue(buffer.toString(), Itinerario.class);
+		Gson gson = new Gson();
+		Itinerario novo = gson.fromJson(buffer.toString(), Itinerario.class);
 		System.out.printf("Novo: %s", novo);
 
 		ArrayList<Itinerario> itinerarios = (ArrayList<Itinerario>) context.getAttribute("itinerarios");
-	
 		itinerarios.add(novo);
 		Collections.sort(itinerarios, new Comparador());
 		context.setAttribute("itinerarios", itinerarios);
