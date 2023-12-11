@@ -1,4 +1,3 @@
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,8 +15,8 @@ import com.google.gson.Gson;
 
 import entidades.Linha;
 
-@WebServlet("/cadastrar")
-public class Cadastrar extends HttpServlet {
+@WebServlet("/recuperarMaisUsadas")
+public class RecuperarMaisUsadas extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
@@ -34,29 +33,25 @@ public class Cadastrar extends HttpServlet {
 	private static class Comparador implements Comparator<Linha> {
 		@Override
 		public int compare(Linha o1, Linha o2) {
-			return o1.getId() - o2.getId();
+			int resultadoUsuarios = o2.getUsuariosDiarios() - o1.getUsuariosDiarios();
+            int resultadoId = o2.getId() - o1.getId();
+            return resultadoUsuarios != 0 ? resultadoUsuarios : resultadoId;
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		StringBuffer buffer = new StringBuffer();
-		try {
-			String line;
-			BufferedReader reader = request.getReader();
-			while((line = reader.readLine()) != null)
-				buffer.append(line);
-		} 
-		catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final int QT_LINHAS = Integer.parseInt(request.getParameter("quantidade"));
+
+		List<Linha> linhas = (ArrayList<Linha>) context.getAttribute("linhas");
+        List<Linha> linhasOrdenadas = new ArrayList<>(linhas);
+        Collections.sort(linhasOrdenadas, new Comparador());
+        List<Linha> primeirosOito = linhasOrdenadas.subList(0, QT_LINHAS);
 
 		Gson gson = new Gson();
-		Linha novo = gson.fromJson(buffer.toString(), Linha.class);
-
-		List<Linha> linhas = (List<Linha>) context.getAttribute("linhas");
-		linhas.add(novo);
-		Collections.sort(linhas, new Comparador());
+		String linhasJson = gson.toJson(primeirosOito);
+		response.setContentType("application/json");
+		response.getWriter().write(linhasJson);
 	}
 
 }
