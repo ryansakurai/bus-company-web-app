@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.lang.reflect.Type;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import entidades.Linha;
 
@@ -52,10 +54,11 @@ public class Cadastrar extends HttpServlet {
 		}
 
 		Gson gson = new Gson();
-		Linha novo = gson.fromJson(buffer.toString(), Linha.class);
+		Type listType = new TypeToken<ArrayList<Linha>>(){}.getType();
+		List<Linha> novos = gson.fromJson(buffer.toString(), listType);
 
 		List<Linha> linhas = (List<Linha>) context.getAttribute("linhas");
-		linhas.add(novo);
+		linhas.addAll(novos);
 		Collections.sort(linhas, new Comparador());
 	}
 
