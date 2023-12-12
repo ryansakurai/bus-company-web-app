@@ -33,7 +33,7 @@ public class Linha {
     public String getTerminal() {
         return terminal;
     }
-    
+
     public int getUsuariosDiarios() {
         return usuariosDiarios;
     }
@@ -49,9 +49,11 @@ public class Linha {
     }
 
     public boolean passaPelaRegiao(String regiao) {
-        for(PontoDeParada ponto : this.getItinerario())
-            if(ponto.regiao().toUpperCase().compareTo(regiao.toUpperCase()) == 0)
+        for (PontoDeParada ponto : this.getItinerario()) {
+            if (ponto.regiao().toUpperCase().contains(regiao.toUpperCase())) {
                 return true;
+            }
+        }
         return false;
     }
 

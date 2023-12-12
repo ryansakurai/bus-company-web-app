@@ -43,15 +43,17 @@
     </div>
 
     <form>
-      <label for="regiao">Escolha uma Região:</label>
-      <select id="regiao" name="regiao">
+      <label class="input_texto" for="regiao">Escolha uma Região:</label>
+      <select id="regiao" class="input" name="regiao">
         <option value="norte">NORTE</option>
         <option value="sul">SUL</option>
         <option value="leste">LESTE</option>
         <option value="oeste">OESTE</option>
         <option value="centro">CENTRO</option>
       </select>
-      <button id="carregar" type="button">Enviar</button>
+      <div class="contato botao_right">
+        <button id="carregar" class="botao" type="button">Enviar</button>
+      </div>
     </form>
 
     <div class="itinerario_div" id="itinerario_div">

@@ -3,6 +3,7 @@ const exibirPorRegiao = function (regiao) {
         'http://localhost:8080/mp1/recuperarPorRegiao',
         { regiao: regiao },
         function (data) {
+            console.log(data);
             exibirItinerariosRegiao(data);
         }
     );
@@ -29,8 +30,11 @@ function exibirItinerariosRegiao(textoItinerarios) {
         card.append('<h1 class="home_titulo">' + linha['id'] + ' - ' + linha['descricao'] + '</h1>');
         card.append('<p class="home_subtitulo">Ponto de Saída:</p>');
         card.append('<p class="home_info">' + linha['terminal'] + '</p>');
-        card.append('<p class="home_subtitulo">Ponto Final:</p>');
-        card.append('<p class="home_info">' + itinerario[itinerario.length - 1].endereco + '</p>');
+        card.append('<p class="home_subtitulo">Pontos:</p>');
+        for (let i = 0; i < itinerario.length; i++) {
+            card.append('<p class="home_info">' + itinerario[i].endereco + '</p>');
+        }
+        //card.append('<p class="home_info">' + itinerario[itinerario.length - 1].endereco + '</p>');
         div.append(card);
 
     }
