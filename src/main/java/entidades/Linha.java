@@ -44,13 +44,12 @@ public class Linha {
 
     @Override
     public String toString() {
-        return String.format("Linha [id=%s, descricao=%s, terminal=%s, itinerario=%s]", id, descricao,
-                terminal, itinerario);
+        return String.format("Linha [id=%s, descricao=%s, terminal=%s, itinerario=%s]", id, descricao, terminal, itinerario);
     }
 
     public boolean passaPelaRegiao(String regiao) {
-        for (PontoDeParada ponto : this.getItinerario()) {
-            if (ponto.regiao().toUpperCase().contains(regiao.toUpperCase())) {
+        for(PontoDeParada ponto : this.getItinerario()) {
+            if(ponto.regiao().compareToIgnoreCase(regiao) == 0) {
                 return true;
             }
         }
