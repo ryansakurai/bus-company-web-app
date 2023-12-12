@@ -1,56 +1,61 @@
 const parseItinerario = function (stringBruta) {
-    let stringSemQuebras = stringBruta.replace(/\n/g, '');
-    const listaDeStrings = stringSemQuebras.split(';');
-    //console.log(listaDeStrings);
+    const listaDeStrings = stringBruta.split('; ');
     const listaDeObj = [];
-    for (let i = 0; i < listaDeStrings.length - 1; i += 1) {
-        //console.log(listaDeStrings[i]);
-        const tupla = listaDeStrings[i].split(',');
+    for(let i = 0; i < listaDeStrings.length; i += 1) {
+        const tupla = listaDeStrings[i].split(', ');
+        if(tupla[0] && tupla[1])
         listaDeObj.push({
             "endereco": tupla[0],
             "regiao": tupla[1]
         });
     }
-    //console.log(listaDeObj);
     return listaDeObj;
 }
 
 const cadastrar = function () {
-    if (!validarNumeroInteiro(document.getElementById('id').value) || !validarNumeroInteiro(document.getElementById('usuariosDiarios').value)) {
+    const id = parseInt($('#id').val());
+    const descricao = $('#descricao').val();
+    const terminal = $('#terminal').val();
+    const usuariosDiarios = parseInt($('#usuariosDiarios').val());
+    const itinerario = $('#itinerario').val();
+
+    if(isNaN(id)) {
+        alert(`'ID' precisa ser um número!`);
         return;
     }
+    if(isNaN(usuariosDiarios)) {
+        alert(`'Usuários Diários' precisa ser um número!`);
+        return;
+    }
+    const padraoItinerario = /(.+ - \d+, .+; )*(.+ - \d+, .+)/;
+    if(!padraoItinerario.test(itinerario)) {
+        alert(`'Itinerário' precisa ser uma lista de pontos de parada no formato '<endereço> - <número>, <região>', separados por quebra de linha`);
+        return;
+    }
+
     const dado = [
         {
-            "id": parseInt($('#id').val()),
-            "descricao": $('#descricao').val(),
-            "terminal": $('#terminal').val(),
-            "usuariosDiarios": parseInt($('#usuariosDiarios').val()),
-            "itinerario": parseItinerario($('#itinerario').val())
+            "id": id,
+            "descricao": descricao,
+            "terminal": terminal,
+            "usuariosDiarios": usuariosDiarios,
+            "itinerario": parseItinerario(itinerario)
         }
     ]
-    console.log(dado);
+
     $.ajax({
         url: 'http://localhost:8080/mp1/cadastrar',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(dado),
         success: function () {
-            console.log("deu");
+            console.log(dado);
+            alert(`Enviado com sucesso!`);
         },
         error: function () {
-            console.error("nao deu");
+            console.error("Erro ao enviar!");
         }
     });
-}
-
-function validarNumeroInteiro(num) {
-    var numero = num;
-    if (Number.isInteger(Number(numero))) {
-        return true;
-    } else {
-        alert('Número inteiro inválido!');
-        return false
-    }
 }
 
 $(document).ready(

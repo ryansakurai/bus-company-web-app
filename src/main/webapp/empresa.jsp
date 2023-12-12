@@ -18,18 +18,18 @@
     <header>
       <div class="navbar">
         <div class="icone-direita">
-          <a href="#icone"><img src="img/logo.png" alt="Ícone"></a>
+          <a href="index.jsp"><img src="img/logo.png" alt="Ícone"></a>
         </div>
         <ul class="menu">
           <li><a href="index.jsp">HOME</a></li>
-          <li class="dropdown"><a href="rotas_itinerario.jsp">ROTAS</a>
+          <li class="dropdown"><a href=" " class="active">ROTAS</a>
             <div class="dropdown-content">
               <a href="rotas_itinerario.jsp">Itinerários</a>
               <a href="rotas_cadastrar.jsp">Cadastrar Itinerários</a>
             </div>
           </li>
           <li><a href="contato.jsp">CONTATO</a></li>
-          <li><a href=" " class="active">EMPRESA</a></li>
+          <li><a href="">EMPRESA</a></li>
           <li><a href="duvidas.jsp">DÚVIDAS</a></li>
         </ul>
 
@@ -55,22 +55,22 @@
 
     <footer class="rodape">
       <div class="redes-sociais">
-        <a href="#instagram"> <img src="img/instagram.png" alt=""></a>
-        <a href="#whatsapp"><img src="img/whatsapp.png" alt=""></a>
+        <a href="https://youtu.be/od_PmtmMDV0?si=Ku77W07P5Ocg4a_E" target="_blank"> <img src="img/instagram.png" alt=""></a>
+        <a href="https://youtu.be/od_PmtmMDV0?si=Ku77W07P5Ocg4a_E" target="_blank"><img src="img/whatsapp.png" alt=""></a>
       </div>
       <div class="links-uteis">
-        <a href="#duvidas">
+        <a href="duvidas.jsp">
           <p>Dúvidas</p>
         </a>
-        <a href="#contato">
+        <a href="contato.jsp">
           <p>Contato</p>
         </a>
-        <a href="#empresa">
+        <a href="#">
           <p>Empresa</p>
         </a>
       </div>
       <div class="logo-direita">
-        <a href="#home"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.jsp"><img src="img/logo.png" alt="Logo"></a>
       </div>
     </footer>
 

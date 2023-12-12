@@ -18,14 +18,14 @@
     <header>
       <div class="navbar">
         <div class="icone-direita">
-          <a href="#icone"><img src="img/logo.png" alt="Ícone"></a>
+          <a href="index.jsp"><img src="img/logo.png" alt="Ícone"></a>
         </div>
         <ul class="menu">
           <li><a href="index.jsp">HOME</a></li>
-          <li class="dropdown"><a href="rotas_itinerario.jsp" class="active">ROTAS</a>
+          <li class="dropdown"><a href=" " class="active">ROTAS</a>
             <div class="dropdown-content">
               <a href="rotas_itinerario.jsp">Itinerários</a>
-              <a href=" ">Cadastrar Itinerários</a>
+              <a href="">Cadastrar Itinerários</a>
             </div>
           </li>
           <li><a href="contato.jsp">CONTATO</a></li>
@@ -50,35 +50,35 @@
       <label class="input_texto" for="terminal">Terminal:</label>
       <input type="text" id="terminal" name="terminal" class="input" required><br>
 
-      <label class="input_texto" for="usuariosDiarios">usuariosDiarios:</label>
+      <label class="input_texto" for="usuariosDiarios">Usuários Diários:</label>
       <input type="text" id="usuariosDiarios" class="input" name="usuariosDiarios" required><br>
 
 
-      <label class="input_texto" for="itinerario">Pontos de Parada (id,nome separados por vírgula, conjuntos separados por ponto e vírgula):</label>
+      <label class="input_texto" for="itinerario">Itinerário (pontos de parada no formato 'rua - número, região' separados por '; '):</label>
       <textarea id="itinerario" class="input" name="itinerario" rows="4" required></textarea><br>
 
       <div class="contato botao_right">
-        <button type="submit" class="botao" id="cadastrar">Enviar</button>
+        <button type="button" class="botao" id="cadastrar">Enviar</button>
       </div>
     </form>
     <footer class="rodape">
       <div class="redes-sociais">
-        <a href="#instagram"> <img src="img/instagram.png" alt=""></a>
-        <a href="#whatsapp"><img src="img/whatsapp.png" alt=""></a>
+        <a href="https://youtu.be/od_PmtmMDV0?si=Ku77W07P5Ocg4a_E" target="_blank"> <img src="img/instagram.png" alt=""></a>
+        <a href="https://youtu.be/od_PmtmMDV0?si=Ku77W07P5Ocg4a_E" target="_blank"><img src="img/whatsapp.png" alt=""></a>
       </div>
       <div class="links-uteis">
-        <a href="#duvidas">
+        <a href="duvidas.jsp">
           <p>Dúvidas</p>
         </a>
-        <a href="#contato">
+        <a href="contato.jsp">
           <p>Contato</p>
         </a>
-        <a href="#empresa">
+        <a href="empresa.jsp">
           <p>Empresa</p>
         </a>
       </div>
       <div class="logo-direita">
-        <a href="#home"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.jsp"><img src="img/logo.png" alt="Logo"></a>
       </div>
     </footer>
 
