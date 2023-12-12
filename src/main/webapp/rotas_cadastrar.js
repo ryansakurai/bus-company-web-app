@@ -1,23 +1,24 @@
-const parseItinerario = function (stringBruta) {
-    const listaDeStrings = stringBruta.split('; ');
-    const listaDeObj = [];
-    for(let i = 0; i < listaDeStrings.length; i += 1) {
-        const tupla = listaDeStrings[i].split(', ');
-        if(tupla[0] && tupla[1])
-        listaDeObj.push({
-            "endereco": tupla[0],
-            "regiao": tupla[1]
-        });
+const parseItinerario = function(stringBruta) {
+    const pontosDeParadaStrLista = stringBruta.split('; ');
+    const pontosDeParadaObjLista = [];
+    for(let i in pontosDeParadaStrLista) {
+        const pontoDeParadaTupla = pontosDeParadaStrLista[i].split(', ');
+        if(pontoDeParadaTupla[0] && pontoDeParadaTupla[1])
+            pontosDeParadaObjLista.push({
+                "endereco": pontoDeParadaTupla[0],
+                "regiao": pontoDeParadaTupla[1]
+            });
     }
-    return listaDeObj;
+    return pontosDeParadaObjLista;
 }
 
 const cadastrar = function () {
-    const id = parseInt($('#id').val());
+    const id = parseInt( $('#id').val() );
     const descricao = $('#descricao').val();
     const terminal = $('#terminal').val();
-    const usuariosDiarios = parseInt($('#usuariosDiarios').val());
+    const usuariosDiarios = parseInt( $('#usuariosDiarios').val() );
     const itinerario = $('#itinerario').val();
+    const padraoItinerario = /(.+ - \d+, .+; )*(.+ - \d+, .+)/;
 
     if(isNaN(id)) {
         alert(`'ID' precisa ser um número!`);
@@ -27,7 +28,6 @@ const cadastrar = function () {
         alert(`'Usuários Diários' precisa ser um número!`);
         return;
     }
-    const padraoItinerario = /(.+ - \d+, .+; )*(.+ - \d+, .+)/;
     if(!padraoItinerario.test(itinerario)) {
         alert(`'Itinerário' precisa ser uma lista de pontos de parada no formato '<endereço> - <número>, <região>', separados por quebra de linha`);
         return;
@@ -43,28 +43,23 @@ const cadastrar = function () {
         }
     ]
 
-    $.ajax({
-        url: 'http://localhost:8080/mp1/cadastrar',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(dado),
-        success: function () {
-            console.log(dado);
-            alert(`Enviado com sucesso!`);
-        },
-        error: function () {
-            console.error("Erro ao enviar!");
+    $.post(
+        `cadastrar`,
+        JSON.stringify(dado),
+        function(data, status) {
+            console.log(status);
+            if(status === `success`)
+                alert(`Linha cadastrada com sucesso!`);
         }
-    });
+    );
 }
 
 $(document).ready(
-    function () {
+    function() {
         $('#cadastrar').click(
-            function () {
+            function() {
                 cadastrar();
             }
         );
     }
 );
-
