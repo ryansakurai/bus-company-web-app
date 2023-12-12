@@ -22,7 +22,7 @@
         </div>
         <ul class="menu">
           <li><a href="index.jsp">HOME</a></li>
-          <li class="dropdown"><a href=" " class="active">ROTAS</a>
+          <li class="dropdown"><a href="" class="active">ROTAS</a>
             <div class="dropdown-content">
               <a href="">Itinerários</a>
               <a href="rotas_cadastrar.jsp">Cadastrar Itinerários</a>

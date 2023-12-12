@@ -14,7 +14,7 @@
                 "regiao": "Norte"
             },
             {
-                "endereco": "Praça da Liberdade - 7",
+                "endereco": "Praca da Liberdade - 7",
                 "regiao": "Norte"
             },
             {
@@ -44,6 +44,10 @@
             {
                 "endereco": "Rua Zoro",
                 "regiao": "Norte"
+            },
+            {
+                "endereco": "Rua Sanji",
+                "regiao": "Norte"
             }
         ]
     },
@@ -59,10 +63,6 @@
             },
             {
                 "endereco": "Avenida dos Esportes - 22",
-                "regiao": "Leste"
-            },
-            {
-                "endereco": "Praca dos Artistas - 10",
                 "regiao": "Leste"
             }
         ]
@@ -104,6 +104,10 @@
             {
                 "endereco": "Praca da Felicidade - 12",
                 "regiao": "Sul"
+            },
+            {
+                "endereco": "Praca da Tristeza - 12",
+                "regiao": "Sul"
             }
         ]
     },
@@ -143,6 +147,14 @@
             },
             {
                 "endereco": "Praca da Inovacao - 9",
+                "regiao": "Leste"
+            },
+            {
+                "endereco": "Rua do Caos - 35",
+                "regiao": "Norte"
+            },
+            {
+                "endereco": "Praca Pracona - 9",
                 "regiao": "Leste"
             }
         ]
