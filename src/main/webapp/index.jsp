@@ -21,8 +21,8 @@
           <a href="index.jsp"><img src="img/logo.png" alt="Ícone"></a>
         </div>
         <ul class="menu">
-          <li><a href="">HOME</a></li>
-          <li class="dropdown"><a href=" " class="active">ROTAS</a>
+          <li><a href="" class="active">HOME</a></li>
+          <li class="dropdown"><a href=" ">ROTAS</a>
             <div class="dropdown-content">
               <a href="rotas_itinerario.jsp">Itinerários</a>
               <a href="rotas_cadastrar.jsp">Cadastrar Itinerários</a>

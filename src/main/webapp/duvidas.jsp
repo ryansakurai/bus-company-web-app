@@ -22,7 +22,7 @@
         </div>
         <ul class="menu">
           <li><a href="index.jsp">HOME</a></li>
-          <li class="dropdown"><a href=" " class="active">ROTAS</a>
+          <li class="dropdown"><a href=" ">ROTAS</a>
             <div class="dropdown-content">
               <a href="rotas_itinerario.jsp">Itinerários</a>
               <a href="rotas_cadastrar.jsp">Cadastrar Itinerários</a>
@@ -30,7 +30,7 @@
           </li>
           <li><a href="contato.jsp">CONTATO</a></li>
           <li><a href="empresa.jsp">EMPRESA</a></li>
-          <li><a href="">DÚVIDAS</a></li>
+          <li><a href="" class="active">DÚVIDAS</a></li>
         </ul>
 
       </div>
