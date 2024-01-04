@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import entidades.Linha;
+import entities.BusLine;
 
-@WebServlet("/cadastrar")
-public class Cadastrar extends HttpServlet {
+@WebServlet("/register")
+public class Register extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
@@ -29,13 +29,13 @@ public class Cadastrar extends HttpServlet {
 		super.init();
 		this.context = getServletContext();
 
-		if(context.getAttribute("linhas") == null)
-			this.context.setAttribute("linhas", new ArrayList<Linha>());
+		if(context.getAttribute("busLines") == null)
+			this.context.setAttribute("busLines", new ArrayList<BusLine>());
 	}
 
-	private static class Comparador implements Comparator<Linha> {
+	private static class Comparador implements Comparator<BusLine> {
 		@Override
-		public int compare(Linha o1, Linha o2) {
+		public int compare(BusLine o1, BusLine o2) {
 			return o1.getId() - o2.getId();
 		}
 	}
@@ -44,22 +44,22 @@ public class Cadastrar extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StringBuffer buffer = new StringBuffer();
 		try {
-			String line;
+			String inputLine;
 			BufferedReader reader = request.getReader();
-			while((line = reader.readLine()) != null)
-				buffer.append(line);
+			while((inputLine = reader.readLine()) != null)
+				buffer.append(inputLine);
 		} 
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
 
 		Gson gson = new Gson();
-		Type listType = new TypeToken<ArrayList<Linha>>(){}.getType();
-		List<Linha> novos = gson.fromJson(buffer.toString(), listType);
+		Type listType = new TypeToken<ArrayList<BusLine>>(){}.getType();
+		List<BusLine> newBusLines = gson.fromJson(buffer.toString(), listType);
 
-		List<Linha> linhas = (List<Linha>) context.getAttribute("linhas");
-		linhas.addAll(novos);
-		Collections.sort(linhas, new Comparador());
+		List<BusLine> busLines = (List<BusLine>) context.getAttribute("busLines");
+		busLines.addAll(newBusLines);
+		Collections.sort(busLines, new Comparador());
 	}
 
 }

@@ -7,10 +7,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ufscar</groupId>
-  <artifactId>mp1</artifactId>
+  <artifactId>bus-company</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>mp1 Web App</name>
+  <name>Bus Company Web App</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,7 +52,7 @@
   </dependencies>
   
   <build>
-    <finalName>mp1</finalName>
+    <finalName>bus-company</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

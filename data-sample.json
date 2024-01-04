@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1,
+        "name": "Onibus 1",
+        "terminal": "Terminal A",
+        "dailyUsers": 500,
+        "itinerary": [
+            {
+                "address": "Avenida Principal - 123",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua das Flores - 45",
+                "region": "Norte"
+            },
+            {
+                "address": "Praca da Liberdade - 7",
+                "region": "Norte"
+            },
+            {
+                "address": "Alameda dos Ipes - 78",
+                "region": "Centro"
+            },
+            {
+                "address": "Travessa dos Artistas - 15",
+                "region": "Centro"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Onibus 2",
+        "terminal": "Terminal B",
+        "dailyUsers": 300,
+        "itinerary": [
+            {
+                "address": "Avenida Avenidona, 123",
+                "region": "Sul"
+            },
+            {
+                "address": "Rua Monkey D. Luffy",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua Zoro",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua Sanji",
+                "region": "Norte"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Onibus 3",
+        "terminal": "Terminal C",
+        "dailyUsers": 800,
+        "itinerary": [
+            {
+                "address": "Rua do Comercio - 55",
+                "region": "Oeste"
+            },
+            {
+                "address": "Avenida dos Esportes - 22",
+                "region": "Leste"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Onibus 4",
+        "terminal": "Terminal D",
+        "dailyUsers": 600,
+        "itinerary": [
+            {
+                "address": "Rua da Paz - 30",
+                "region": "Oeste"
+            },
+            {
+                "address": "Avenida dos Sonhos - 18",
+                "region": "Centro"
+            },
+            {
+                "address": "Travessa da Alegria - 8",
+                "region": "Leste"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Onibus 5",
+        "terminal": "Terminal E",
+        "dailyUsers": 450,
+        "itinerary": [
+            {
+                "address": "Avenida da Harmonia - 70",
+                "region": "Sul"
+            },
+            {
+                "address": "Rua dos Sonhos - 25",
+                "region": "Sul"
+            },
+            {
+                "address": "Praca da Felicidade - 12",
+                "region": "Sul"
+            },
+            {
+                "address": "Praca da Tristeza - 12",
+                "region": "Sul"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Onibus 6",
+        "terminal": "Terminal F",
+        "dailyUsers": 700,
+        "itinerary": [
+            {
+                "address": "Avenida da Saude - 40",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua da Natureza - 17",
+                "region": "Norte"
+            },
+            {
+                "address": "Travessa da Tranquilidade - 5",
+                "region": "Norte"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Onibus 7",
+        "terminal": "Terminal G",
+        "dailyUsers": 550,
+        "itinerary": [
+            {
+                "address": "Avenida da Cultura - 60",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua da Educacao - 35",
+                "region": "Norte"
+            },
+            {
+                "address": "Praca da Inovacao - 9",
+                "region": "Leste"
+            },
+            {
+                "address": "Rua do Caos - 35",
+                "region": "Norte"
+            },
+            {
+                "address": "Praca Pracona - 9",
+                "region": "Leste"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Onibus 8",
+        "terminal": "Terminal H",
+        "dailyUsers": 900,
+        "itinerary": [
+            {
+                "address": "Avenida da Tecnologia - 80",
+                "region": "Centro"
+            },
+            {
+                "address": "Rua da Ciencia - 50",
+                "region": "Sul"
+            },
+            {
+                "address": "Travessa da Inovacao - 14",
+                "region": "Norte"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Onibus 9",
+        "terminal": "Terminal I",
+        "dailyUsers": 400,
+        "itinerary": [
+            {
+                "address": "Avenida da Amizade - 90",
+                "region": "Oeste"
+            },
+            {
+                "address": "Rua da Solidariedade - 55",
+                "region": "Centro"
+            },
+            {
+                "address": "Praca da Uniao - 20",
+                "region": "Sul"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Onibus 10",
+        "terminal": "Terminal J",
+        "dailyUsers": 350,
+        "itinerary": [
+            {
+                "address": "Avenida do Progresso - 75",
+                "region": "Centro"
+            },
+            {
+                "address": "Rua da Prosperidade - 40",
+                "region": "Leste"
+            },
+            {
+                "address": "Travessa da Felicidade - 15",
+                "region": "Norte"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Onibus 11",
+        "terminal": "Terminal K",
+        "dailyUsers": 600,
+        "itinerary": [
+            {
+                "address": "Avenida da Sustentabilidade - 65",
+                "region": "Sul"
+            },
+            {
+                "address": "Rua da Ecologia - 30",
+                "region": "Centro"
+            },
+            {
+                "address": "Praca da Preservacao - 10",
+                "region": "Leste"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Onibus 12",
+        "terminal": "Terminal L",
+        "dailyUsers": 800,
+        "itinerary": [
+            {
+                "address": "Avenida da Modernidade - 50",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua da Inovacao - 25",
+                "region": "Centro"
+            },
+            {
+                "address": "Travessa da Tecnologia - 8",
+                "region": "Centro"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Onibus 13",
+        "terminal": "Terminal M",
+        "dailyUsers": 450,
+        "itinerary": [
+            {
+                "address": "Avenida da Arte - 70",
+                "region": "Centro"
+            },
+            {
+                "address": "Rua da Cultura - 35",
+                "region": "Sul"
+            },
+            {
+                "address": "Praca dos Artistas - 12",
+                "region": "Norte"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Onibus 14",
+        "terminal": "Terminal N",
+        "dailyUsers": 700,
+        "itinerary": [
+            {
+                "address": "Avenida da Historia - 40",
+                "region": "Leste"
+            },
+            {
+                "address": "Rua do Passado - 17",
+                "region": "Leste"
+            },
+            {
+                "address": "Travessa da Memoria - 5",
+                "region": "Leste"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Onibus 15",
+        "terminal": "Terminal O",
+        "dailyUsers": 550,
+        "itinerary": [
+            {
+                "address": "Avenida da Aventura - 60",
+                "region": "Norte"
+            },
+            {
+                "address": "Rua da Exploracao - 35",
+                "region": "Centro"
+            },
+            {
+                "address": "Praca da Descoberta - 9",
+                "region": "Centro"
+            }
+        ]
+    }
+]

@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import entidades.Linha;
+import entities.BusLine;
 
-@WebServlet("/recuperarTodas")
-public class RecuperarTodas extends HttpServlet {
+@WebServlet("/fetchAll")
+public class FetchAll extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
@@ -24,17 +24,17 @@ public class RecuperarTodas extends HttpServlet {
 		super.init();
 		this.context = getServletContext();
 
-		if(context.getAttribute("linhas") == null)
-			this.context.setAttribute("linhas", new ArrayList<Linha>());
+		if(context.getAttribute("busLines") == null)
+			this.context.setAttribute("busLines", new ArrayList<BusLine>());
 	}
 
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Linha> linhas = (List<Linha>) context.getAttribute("linhas");
+		List<BusLine> busLines = (List<BusLine>) context.getAttribute("busLines");
 		Gson gson = new Gson();
-		String linhasJson = gson.toJson(linhas);
+		String busLinesJson = gson.toJson(busLines);
 		response.setContentType("application/json");
-		response.getWriter().write(linhasJson);
+		response.getWriter().write(busLinesJson);
 	}
 
 } 

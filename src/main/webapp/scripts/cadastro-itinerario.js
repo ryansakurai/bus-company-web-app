@@ -1,51 +1,49 @@
-const parseItinerario = function(stringBruta) {
-    const pontosDeParadaStrLista = stringBruta.split('; ');
-    const pontosDeParadaObjLista = [];
-    for(let i in pontosDeParadaStrLista) {
-        const pontoDeParadaTupla = pontosDeParadaStrLista[i].split(', ');
-        if(pontoDeParadaTupla[0] && pontoDeParadaTupla[1])
-            pontosDeParadaObjLista.push({
-                "endereco": pontoDeParadaTupla[0],
-                "regiao": pontoDeParadaTupla[1]
+const parseItinerary = function(rawString) {
+    const busStopStrList = rawString.split('; ');
+    const busStopObjList = [];
+    for(let i in busStopStrList) {
+        const busStopTuple = busStopStrList[i].split(', ');
+        if(busStopTuple[0] && busStopTuple[1])
+            busStopObjList.push({
+                "address": busStopTuple[0],
+                "region": busStopTuple[1]
             });
     }
-    return pontosDeParadaObjLista;
+    return busStopObjList;
 }
 
-const cadastrar = function () {
+const register = function () {
     const id = parseInt( $('#id').val() );
-    const descricao = $('#descricao').val();
+    const name = $('#descricao').val();
     const terminal = $('#terminal').val();
-    const usuariosDiarios = parseInt( $('#usuariosDiarios').val() );
-    const itinerario = $('#itinerario').val();
-    const padraoItinerario = /(.+ - \d+, .+; )*(.+ - \d+, .+)/;
+    const dailyUsers = parseInt( $('#usuariosDiarios').val() );
+    const itinerary = $('#itinerario').val();
+    const itineraryRegex = /(.+ - \d+, .+; )*(.+ - \d+, .+)/;
 
     if(isNaN(id)) {
         alert(`'ID' precisa ser um número!`);
         return;
     }
-    if(isNaN(usuariosDiarios)) {
+    if(isNaN(dailyUsers)) {
         alert(`'Usuários Diários' precisa ser um número!`);
         return;
     }
-    if(!padraoItinerario.test(itinerario)) {
+    if(!itineraryRegex.test(itinerary)) {
         alert(`'Itinerário' precisa ser uma lista de pontos de parada no formato '<endereço> - <número>, <região>', separados por quebra de linha`);
         return;
     }
 
-    const dado = [
-        {
-            "id": id,
-            "descricao": descricao,
-            "terminal": terminal,
-            "usuariosDiarios": usuariosDiarios,
-            "itinerario": parseItinerario(itinerario)
-        }
-    ]
+    const busLine = [{
+        "id": id,
+        "name": name,
+        "terminal": terminal,
+        "dailyUsers": dailyUsers,
+        "itinerary": parseItinerary(itinerary)
+    }];
 
     $.post(
-        `cadastrar`,
-        JSON.stringify(dado),
+        `register`,
+        JSON.stringify(busLine),
         function(data, status) {
             console.log(status);
             if(status === `success`)
@@ -58,7 +56,7 @@ $(document).ready(
     function() {
         $('#cadastrar').click(
             function() {
-                cadastrar();
+                register();
             }
         );
     }

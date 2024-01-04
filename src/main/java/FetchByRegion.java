@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import entidades.Linha;
+import entities.BusLine;
 
-@WebServlet("/recuperarPorRegiao")
-public class RecuperarPorRegiao extends HttpServlet {
+@WebServlet("/fetchByRegion")
+public class FetchByRegion extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ServletContext context;
@@ -25,23 +25,23 @@ public class RecuperarPorRegiao extends HttpServlet {
 		super.init();
 		this.context = getServletContext();
 
-		if(context.getAttribute("linhas") == null)
-			this.context.setAttribute("linhas", new ArrayList<Linha>());
+		if(context.getAttribute("busLines") == null)
+			this.context.setAttribute("busLines", new ArrayList<BusLine>());
 	}
 	
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        final String REGIAO = request.getParameter("regiao");
+        final String REGION = request.getParameter("region");
 
-        List<Linha> linhas = (ArrayList<Linha>) context.getAttribute("linhas");
-        List<Linha> linhasFiltradas = linhas.stream()
-            .filter(linha -> linha.passaPelaRegiao(REGIAO))
+        List<BusLine> busLines = (ArrayList<BusLine>) context.getAttribute("busLines");
+        List<BusLine> filteredBusLines = busLines.stream()
+            .filter(busLine -> busLine.serves(REGION))
             .collect(Collectors.toList());
 
 		Gson gson = new Gson();
-		String linhasJson = gson.toJson(linhasFiltradas);
+		String busLinesJson = gson.toJson(filteredBusLines);
 		response.setContentType("application/json");
-		response.getWriter().write(linhasJson);
+		response.getWriter().write(busLinesJson);
 	}
 
 }

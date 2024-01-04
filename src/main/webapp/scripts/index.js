@@ -1,31 +1,31 @@
-const inserirHTML = function(listaLinhas) {
+const insertHtml = function(busLinesList) {
     const div = $(`#home_home`);
     div.empty();
 
     $.each(
-        listaLinhas,
-        function(idx, linha) {
-            const itinerario = linha.itinerario;
+        busLinesList,
+        function(idx, busLine) {
+            const itinerary = busLine.itinerary;
             const card = $(`<div class="home_linhas">`);
-            card.append(`<h1 class="home_titulo">${linha.id} - ${linha.descricao}</h1>`);
+            card.append(`<h1 class="home_titulo">${busLine.id} - ${busLine.name}</h1>`);
             card.append(`<p class="home_subtitulo">Ponto de Saída:</p>`);
-            card.append(`<p class="home_info">${linha.terminal}</p>`);
+            card.append(`<p class="home_info">${busLine.terminal}</p>`);
             card.append(`<p class="home_subtitulo">Ponto Final:</p>`);
-            card.append(`<p class="home_info">${itinerario[itinerario.length-1].endereco}</p>`);
+            card.append(`<p class="home_info">${itinerary[itinerary.length-1].address}</p>`);
             div.append(card);
         }
     );
 }
 
-const exibirMaisUsadas = function() {
+const showMostUsed = function() {
     $.getJSON(
-        `recuperarMaisUsadas`,
-        {quantidade: 8},
-        function(linhasLista, status) {
+        `fetchMostUsed`,
+        {quantity: 8},
+        function(busLinesList, status) {
             console.log(status);
-            inserirHTML(linhasLista);
+            insertHtml(busLinesList);
         }
     );
 }
 
-$(document).ready(exibirMaisUsadas);
+$(document).ready(showMostUsed);
